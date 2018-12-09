@@ -114,7 +114,7 @@
 <meta property="og:site_name" content="Yung&#39;s blog">
 <meta property="og:description" content="Object是一个具体类，但是设计它主要是为了扩展，它的所有非 final 方法（equals、hashCode、toString、clone和finalize）都有明确的通用约定。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-07T13:58:52.746Z">
+<meta property="og:updated_time" content="2018-12-09T15:17:48.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Object类的通用方法">
 <meta name="twitter:description" content="Object是一个具体类，但是设计它主要是为了扩展，它的所有非 final 方法（equals、hashCode、toString、clone和finalize）都有明确的通用约定。">
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">Words&#58;</span>
                 
                 <span title="Words">
-                  1.1k
+                  1k
                 </span>
               
 
@@ -483,13 +483,13 @@
 </ul>
 <h3 id="一个好的hash函数"><a href="#一个好的hash函数" class="headerlink" title="一个好的hash函数"></a>一个好的hash函数</h3><ol>
 <li>令int result = 17     或任意非零常数</li>
-<li>对于对象每一个关键域 f（equals中用到的），完成以下步骤：<br> a. 为该域计算int类型的的散列码c:<pre><code>&amp;emsp;&amp;emsp;i. boolean类型，c =  f ? 0 : 1
-&amp;emsp;&amp;emsp;ii. byte、short、char、int，c = (int)f
-&amp;emsp;&amp;emsp;iii. long类型，c = (int)(f ^ (f &gt;&gt;&gt; 32))
-&amp;emsp;&amp;emsp;iv. float类型，c = Float.floatToIntBits(f)
-&amp;emsp;&amp;emsp;v. doubel类型，则先Double.doubleToLongBits(f)得到一个long类型的值
-&amp;emsp;&amp;emsp;vi. 该域是一个对象引用，则递归调用 hashCode，如为null，则返回0
-&amp;emsp;&amp;emsp;vii. 该域是一个数组，则把每一个元素当成单独的域处理
+<li>对于对象每一个关键域 f（equals中用到的），完成以下步骤：<br> a. 为该域计算int类型的的散列码c:<pre><code>i. boolean类型，c =  f ? 0 : 1
+ii. byte、short、char、int，c = (int)f
+iii. long类型，c = (int)(f ^ (f &gt;&gt;&gt; 32))
+iv. float类型，c = Float.floatToIntBits(f)
+v. doubel类型，则先Double.doubleToLongBits(f)得到一个long类型的值
+vi. 该域是一个对象引用，则递归调用 hashCode，如为null，则返回0
+vii. 该域是一个数组，则把每一个元素当成单独的域处理
 </code></pre> b. result = 37*result + c</li>
 <li>返回result</li>
 <li>测试</li>
@@ -686,7 +686,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -708,7 +708,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -807,7 +807,7 @@
     
       <span class="post-meta-item-text">Total words&#58;</span>
     
-    <span title="Total words">2.9k</span>
+    <span title="Total words">4k</span>
   
 </div>
 

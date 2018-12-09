@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://qinyuan97.me/2018/12/07/life1/</loc>
-    <lastmod>2018-12-09T06:41:46.295Z</lastmod>
+    <loc>https://qinyuan97.me/2018/12/07/effectiveJava3/</loc>
+    <lastmod>2018-12-09T15:17:48.704Z</lastmod>
   </url>  <url>
     <loc>https://qinyuan97.me/2018/12/07/effectiveJava2/</loc>
-    <lastmod>2018-12-07T13:59:01.764Z</lastmod>
+    <lastmod>2018-12-09T15:17:39.453Z</lastmod>
   </url>  <url>
-    <loc>https://qinyuan97.me/2018/12/07/effectiveJava3/</loc>
-    <lastmod>2018-12-07T13:58:52.746Z</lastmod>
+    <loc>https://qinyuan97.me/2018/12/07/life1/</loc>
+    <lastmod>2018-12-09T15:17:29.193Z</lastmod>
+  </url>  <url>
+    <loc>https://qinyuan97.me/2018/12/09/effectiveJava4/</loc>
+    <lastmod>2018-12-09T15:17:07.283Z</lastmod>
   </url>
 </urlset>
