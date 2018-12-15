@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qinyuan97.me/"/>
-  <updated>2018-12-09T15:17:07.283Z</updated>
+  <updated>2018-12-15T11:43:43.499Z</updated>
   <id>https://qinyuan97.me/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IntelliJ IDEA 使用技巧</title>
+    <link href="https://qinyuan97.me/2018/12/15/IntelliJ%20IDEA/"/>
+    <id>https://qinyuan97.me/2018/12/15/IntelliJ IDEA/</id>
+    <published>2018-12-15T07:45:05.782Z</published>
+    <updated>2018-12-15T11:43:43.499Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>常见的 IntelliJ IDEA使用技巧整理</p><a id="more"></a><h1 id="编辑-Edit"><a href="#编辑-Edit" class="headerlink" title="编辑(Edit)"></a>编辑(Edit)</h1><ul><li>Ctrl + X 删除一行</li><li>Ctrl + W 扩大选择范围</li><li>Ctrl + D 复制一行</li><li>Ctrl + Shift + 左右箭头 扩大光标选择范围</li><li>Ctrl + Shift + U 转换大小写</li><li>Ctrl + Shift + V 调出剪切板<br><br></li><li>Ctrl + R 在文件中查找并替换</li><li>Ctrl + Shift + R 查找并替换</li><li>Ctrl + Shift + F 查找</li><li>Ctrl + Alt + Shift + J 光标选中所有符合的<br><br><h1 id="视图-View"><a href="#视图-View" class="headerlink" title="视图(View)"></a>视图(View)</h1></li><li>Ctrl + Shift + A  Find Action<br><br></li><li>Alt + 首字母 弹出对应选项</li><li>Alt + 1 跳转到 Project，之后 Ctrl+Shift+左右箭头 可移动分割线  F4 进入代码</li><li>Alt + 0 跳转到 Message  Ctrl + Shift + F4 关闭</li><li>Alt + 4 跳转到 Run</li><li>Alt + 6 跳转到 Todo</li><li>Alt + F12 跳转到终端<br><br></li><li>Ctrl + Q 显示文档</li><li>Ctrl + P 显示方法参数</li><li>Ctrl + E 最近文件</li><li>Ctrl + Shift + E 最近修改文件<br><br><h1 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h1></li><li>Alt + 上下箭头 方法之间跳转</li><li>Alt + 左右箭头 编辑区文件之间跳转</li><li>Ctrl + Alt + [ 或 ]  项目之间跳转<br><br></li><li>Ctrl + Shift + Backspace 跳转到上次编辑位置</li><li>Ctrl + Alt + 左右箭头   编辑位置跳转</li><li>Ctrl + G 跳转到行<br><br></li><li>Ctrl + N 查找类</li><li>Ctrl + Shift + N 查找文件</li><li>F2 跳转到下个错误</li><li>Shift + F2 上个错误<br><br><h1 id="代码-Code"><a href="#代码-Code" class="headerlink" title="代码(Code)"></a>代码(Code)</h1></li><li>Ctrl + O 查看重写的方法</li><li>Ctrl + I 查看实现的方法</li><li>Alt + Insert 生成构造方法、toString()等<br><br></li><li>Ctrl + Alt + T 生成代码块</li><li>Ctrl + J 插入 Live Template<br><br></li><li>Alt + Shift + 上下箭头 将代码行上下移动<br><br></li><li>postfix<br><br></li><li>Alt + Enter 不知道怎么写代码时<br><br><h1 id="重构-Refactor"><a href="#重构-Refactor" class="headerlink" title="重构(Refactor)"></a>重构(Refactor)</h1></li><li>Shift + F6 重命名</li><li>Extract<br><br><h1 id="运行-Run"><a href="#运行-Run" class="headerlink" title="运行(Run)"></a>运行(Run)</h1></li><li>Shift + F10/F9  运行/Debug 上次的程序</li><li>Alt + Shift + F10/F9 选择运行/Debug 程序</li></ul><p><br></p><h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><ul><li>Ctrl + C 光标指向文件时复制文件名</li><li>Ctrl + Shift + C 复制完整路径</li><li>Ctrl + F4 关闭当前编辑器窗口</li><li>Shift + Esc 隐藏当前面板<br><br><br>Ctrl + F12 查看文件结构<br>Ctrl + Alt + Shift + U 查看类图<br>Ctrl + H 查看方法调用关系</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;常见的 IntelliJ IDEA使用技巧整理&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="https://qinyuan97.me/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="IDEA" scheme="https://qinyuan97.me/tags/IDEA/"/>
+    
+  </entry>
   
   <entry>
     <title>类和接口</title>
