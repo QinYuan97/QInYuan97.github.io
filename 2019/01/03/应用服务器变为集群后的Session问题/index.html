@@ -93,7 +93,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Note,Session,">
 
 
 
@@ -106,17 +106,18 @@
 
 
 
-<meta name="description" content="凡心所向，素履所往  生如逆旅，一苇以航">
-<meta name="keywords" content="Java python programming">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yung&#39;s blog">
-<meta property="og:url" content="https://qinyuan97.me/tags/Object/index.html">
+<meta name="description" content="&amp;emsp;&amp;emsp;HTTP 协议本身是无状态的，需要基于 HTTP 协议支持会话状态(Session State)的机制。这样的机制使 Web 服务器从多次单独的 HTTP 请求中看到会话，即知道哪些请求是来自哪些会话的。">
+<meta name="keywords" content="Note,Session">
+<meta property="og:type" content="article">
+<meta property="og:title" content="应用服务器变为集群后的Session问题">
+<meta property="og:url" content="https://qinyuan97.me/2019/01/03/应用服务器变为集群后的Session问题/index.html">
 <meta property="og:site_name" content="Yung&#39;s blog">
-<meta property="og:description" content="凡心所向，素履所往  生如逆旅，一苇以航">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;HTTP 协议本身是无状态的，需要基于 HTTP 协议支持会话状态(Session State)的机制。这样的机制使 Web 服务器从多次单独的 HTTP 请求中看到会话，即知道哪些请求是来自哪些会话的。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-03T03:38:59.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yung&#39;s blog">
-<meta name="twitter:description" content="凡心所向，素履所往  生如逆旅，一苇以航">
+<meta name="twitter:title" content="应用服务器变为集群后的Session问题">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;HTTP 协议本身是无状态的，需要基于 HTTP 协议支持会话状态(Session State)的机制。这样的机制使 Web 服务器从多次单独的 HTTP 请求中看到会话，即知道哪些请求是来自哪些会话的。">
 
 
 
@@ -146,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="https://qinyuan97.me/tags/Object/">
+  <link rel="canonical" href="https://qinyuan97.me/2019/01/03/应用服务器变为集群后的Session问题/">
 
 
 
 
 
-  <title>标签: Object | Yung's blog</title>
+  <title>应用服务器变为集群后的Session问题 | Yung's blog</title>
   
 
 
@@ -181,7 +182,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -307,78 +308,283 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Object<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qinyuan97.me/2019/01/03/应用服务器变为集群后的Session问题/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yung">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yung's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/12/07/effectiveJava3/" itemprop="url">
-              
-                <span itemprop="name">Object类的通用方法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">应用服务器变为集群后的Session问题</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-07T21:57:33+08:00" content="2018-12-07">
-          12-07
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T10:55:05+08:00">
+                2019-01-03
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/03/应用服务器变为集群后的Session问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/03/应用服务器变为集群后的Session问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/01/03/应用服务器变为集群后的Session问题/" class="leancloud_visitors" data-flag-title="应用服务器变为集群后的Session问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words&#58;</span>
+                
+                <span title="Words">
+                  817
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/07/effectiveJava2/" itemprop="url">
-              
-                <span itemprop="name">对象的创建和销毁</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-07T16:22:45+08:00" content="2018-12-07">
-          12-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <p>&emsp;&emsp;HTTP 协议本身是无状态的，需要基于 HTTP 协议支持会话状态(Session State)的机制。这样的机制使 Web 服务器从多次单独的 HTTP 请求中看到会话，即知道哪些请求是来自哪些会话的。<br><a id="more"></a><br>&emsp;&emsp;具体实现方式：在会话开始时，分配一个唯一的会话标识(SessionId)，通过 Cookie 把这个标识告诉浏览器，以后每次请求的时候，浏览器都会带上这个标识来告诉 Web 服务器请求是属于哪个会话的。在 Web 服务器上，每个会话有独立的存储，保存不同会话的信息。如果遇到禁用 Cookie 的情况，一般就把这个会话标识放到URL的参数。<br>&emsp;&emsp;Session 问题：会话数据是保存在单机上的，要保证每一次请求都落在同一个服务器上。<br><br></p>
+<h2 id="Session-Sticky"><a href="#Session-Sticky" class="headerlink" title="Session Sticky"></a>Session Sticky</h2><p>&emsp;&emsp;让负载均衡器能够根据每次请求的会话标识来进行请求转发。<br>&emsp;&emsp;这个方案非常简单，但有一些问题：</p>
+<ul>
+<li>如果一台 Web 服务器崩溃或者重启，这台机器上的会话数据就会丢失。</li>
+<li>会话标识是应用层的信息，那么负载均衡器要将用一个会话的请求都保存到同一个 Web 服务器上的话，就需要进行应用层的解析，这个开销比第4层的交换要大。</li>
+<li>负载均衡器变为了一个有状态的节点，要将会话保存到具体 Web 服务器的映射。和无状态的节点相比，内存消耗更大，容灾方面更麻烦。</li>
+</ul>
+<h2 id="Session-Replication"><a href="#Session-Replication" class="headerlink" title="Session Replication"></a>Session Replication</h2><p>&emsp;&emsp;Web 服务器之间增加会话数据的同步，保证不同 Web 服务器之间的 Session 书籍的一致。</p>
+<ul>
+<li>同步 Session 数据造成了网络带宽的开销。只要 Session 数据有变化，就需要将数据同步到所有其他机器上，机器数越多，同步带来的网络带宽开销就越大。</li>
+<li>每台 Web 服务器都要保存所有的 Session 数据，如果整个集群的 Session 数很多，每天机器用于保存 Session 数据的内存占用严重。</li>
+</ul>
+<p>&emsp;&emsp;Session Replication 方案是靠应用容器开完成 Session 的复制，应用本身不用关心这个事情。但是，这个方案不适合集群机器数多的场景。</p>
+<h2 id="Session-数据集中存储"><a href="#Session-数据集中存储" class="headerlink" title="Session 数据集中存储"></a>Session 数据集中存储</h2><p>&emsp;&emsp;把Session数据集中存储起来，然后不同 Web 服务器从同一个地方来获取 Session。<br>&emsp;&emsp;存在的问题：</p>
+<ul>
+<li>读写 Session 数据引入了网络操作，存在时延和不稳定性。</li>
+<li>如果集中存储 Session 的机器或者集群有问题，就会影响应用。</li>
+</ul>
+<h2 id="Cookie-Based"><a href="#Cookie-Based" class="headerlink" title="Cookie Based"></a>Cookie Based</h2><p>&emsp;&emsp;把 Session 数据放在 Cookie 中，然后在 Web 服务器上从 Cookie 中生成对应的 Session 数据。好比每次都把自己的碗筷带在身上，这样去哪家饭店吃饭就介意随意选择。</p>
+<ul>
+<li>Cookie 长度的限制。</li>
+<li>安全性问题</li>
+<li>每次 HTTP 请求和响应都带有 Session 数据，对性能有影响。</li>
+</ul>
+<p><br><br>对于大型网站来说，Session Sticky 和 Session 集中存储是比较好的方案。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wepay.png" alt="Yung 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Yung 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>作者：</strong>
+    Yung
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://qinyuan97.me/2019/01/03/应用服务器变为集群后的Session问题/" title="应用服务器变为集群后的Session问题">https://qinyuan97.me/2019/01/03/应用服务器变为集群后的Session问题/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
+          
+            <a href="/tags/Session/" rel="tag"><i class="fa fa-tag"></i> Session</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/15/IntelliJ IDEA/" rel="next" title="IntelliJ IDEA 使用技巧">
+                <i class="fa fa-chevron-left"></i> IntelliJ IDEA 使用技巧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -386,6 +592,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
 
 
@@ -410,8 +623,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -502,6 +724,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Session-Sticky"><span class="nav-number">1.</span> <span class="nav-text">Session Sticky</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session-Replication"><span class="nav-number">2.</span> <span class="nav-text">Session Replication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session-数据集中存储"><span class="nav-number">3.</span> <span class="nav-text">Session 数据集中存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie-Based"><span class="nav-number">4.</span> <span class="nav-text">Cookie Based</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -647,6 +885,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

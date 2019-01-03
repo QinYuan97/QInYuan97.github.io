@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qinyuan97.me/"/>
-  <updated>2018-12-15T11:43:43.499Z</updated>
+  <updated>2019-01-03T03:38:59.555Z</updated>
   <id>https://qinyuan97.me/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>应用服务器变为集群后的Session问题</title>
+    <link href="https://qinyuan97.me/2019/01/03/%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%98%E4%B8%BA%E9%9B%86%E7%BE%A4%E5%90%8E%E7%9A%84Session%E9%97%AE%E9%A2%98/"/>
+    <id>https://qinyuan97.me/2019/01/03/应用服务器变为集群后的Session问题/</id>
+    <published>2019-01-03T02:55:05.321Z</published>
+    <updated>2019-01-03T03:38:59.555Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>&emsp;&emsp;HTTP 协议本身是无状态的，需要基于 HTTP 协议支持会话状态(Session State)的机制。这样的机制使 Web 服务器从多次单独的 HTTP 请求中看到会话，即知道哪些请求是来自哪些会话的。<br><a id="more"></a><br>&emsp;&emsp;具体实现方式：在会话开始时，分配一个唯一的会话标识(SessionId)，通过 Cookie 把这个标识告诉浏览器，以后每次请求的时候，浏览器都会带上这个标识来告诉 Web 服务器请求是属于哪个会话的。在 Web 服务器上，每个会话有独立的存储，保存不同会话的信息。如果遇到禁用 Cookie 的情况，一般就把这个会话标识放到URL的参数。<br>&emsp;&emsp;Session 问题：会话数据是保存在单机上的，要保证每一次请求都落在同一个服务器上。<br><br></p><h2 id="Session-Sticky"><a href="#Session-Sticky" class="headerlink" title="Session Sticky"></a>Session Sticky</h2><p>&emsp;&emsp;让负载均衡器能够根据每次请求的会话标识来进行请求转发。<br>&emsp;&emsp;这个方案非常简单，但有一些问题：</p><ul><li>如果一台 Web 服务器崩溃或者重启，这台机器上的会话数据就会丢失。</li><li>会话标识是应用层的信息，那么负载均衡器要将用一个会话的请求都保存到同一个 Web 服务器上的话，就需要进行应用层的解析，这个开销比第4层的交换要大。</li><li>负载均衡器变为了一个有状态的节点，要将会话保存到具体 Web 服务器的映射。和无状态的节点相比，内存消耗更大，容灾方面更麻烦。</li></ul><h2 id="Session-Replication"><a href="#Session-Replication" class="headerlink" title="Session Replication"></a>Session Replication</h2><p>&emsp;&emsp;Web 服务器之间增加会话数据的同步，保证不同 Web 服务器之间的 Session 书籍的一致。</p><ul><li>同步 Session 数据造成了网络带宽的开销。只要 Session 数据有变化，就需要将数据同步到所有其他机器上，机器数越多，同步带来的网络带宽开销就越大。</li><li>每台 Web 服务器都要保存所有的 Session 数据，如果整个集群的 Session 数很多，每天机器用于保存 Session 数据的内存占用严重。</li></ul><p>&emsp;&emsp;Session Replication 方案是靠应用容器开完成 Session 的复制，应用本身不用关心这个事情。但是，这个方案不适合集群机器数多的场景。</p><h2 id="Session-数据集中存储"><a href="#Session-数据集中存储" class="headerlink" title="Session 数据集中存储"></a>Session 数据集中存储</h2><p>&emsp;&emsp;把Session数据集中存储起来，然后不同 Web 服务器从同一个地方来获取 Session。<br>&emsp;&emsp;存在的问题：</p><ul><li>读写 Session 数据引入了网络操作，存在时延和不稳定性。</li><li>如果集中存储 Session 的机器或者集群有问题，就会影响应用。</li></ul><h2 id="Cookie-Based"><a href="#Cookie-Based" class="headerlink" title="Cookie Based"></a>Cookie Based</h2><p>&emsp;&emsp;把 Session 数据放在 Cookie 中，然后在 Web 服务器上从 Cookie 中生成对应的 Session 数据。好比每次都把自己的碗筷带在身上，这样去哪家饭店吃饭就介意随意选择。</p><ul><li>Cookie 长度的限制。</li><li>安全性问题</li><li>每次 HTTP 请求和响应都带有 Session 数据，对性能有影响。</li></ul><p><br><br>对于大型网站来说，Session Sticky 和 Session 集中存储是比较好的方案。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;HTTP 协议本身是无状态的，需要基于 HTTP 协议支持会话状态(Session State)的机制。这样的机制使 Web 服务器从多次单独的 HTTP 请求中看到会话，即知道哪些请求是来自哪些会话的。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Web" scheme="https://qinyuan97.me/categories/Web/"/>
+    
+    
+      <category term="Note" scheme="https://qinyuan97.me/tags/Note/"/>
+    
+      <category term="Session" scheme="https://qinyuan97.me/tags/Session/"/>
+    
+  </entry>
   
   <entry>
     <title>IntelliJ IDEA 使用技巧</title>

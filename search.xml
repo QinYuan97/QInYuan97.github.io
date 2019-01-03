@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[应用服务器变为集群后的Session问题]]></title>
+    <url>%2F2019%2F01%2F03%2F%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%98%E4%B8%BA%E9%9B%86%E7%BE%A4%E5%90%8E%E7%9A%84Session%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;HTTP 协议本身是无状态的，需要基于 HTTP 协议支持会话状态(Session State)的机制。这样的机制使 Web 服务器从多次单独的 HTTP 请求中看到会话，即知道哪些请求是来自哪些会话的。&emsp;&emsp;具体实现方式：在会话开始时，分配一个唯一的会话标识(SessionId)，通过 Cookie 把这个标识告诉浏览器，以后每次请求的时候，浏览器都会带上这个标识来告诉 Web 服务器请求是属于哪个会话的。在 Web 服务器上，每个会话有独立的存储，保存不同会话的信息。如果遇到禁用 Cookie 的情况，一般就把这个会话标识放到URL的参数。&emsp;&emsp;Session 问题：会话数据是保存在单机上的，要保证每一次请求都落在同一个服务器上。 Session Sticky&emsp;&emsp;让负载均衡器能够根据每次请求的会话标识来进行请求转发。&emsp;&emsp;这个方案非常简单，但有一些问题： 如果一台 Web 服务器崩溃或者重启，这台机器上的会话数据就会丢失。 会话标识是应用层的信息，那么负载均衡器要将用一个会话的请求都保存到同一个 Web 服务器上的话，就需要进行应用层的解析，这个开销比第4层的交换要大。 负载均衡器变为了一个有状态的节点，要将会话保存到具体 Web 服务器的映射。和无状态的节点相比，内存消耗更大，容灾方面更麻烦。 Session Replication&emsp;&emsp;Web 服务器之间增加会话数据的同步，保证不同 Web 服务器之间的 Session 书籍的一致。 同步 Session 数据造成了网络带宽的开销。只要 Session 数据有变化，就需要将数据同步到所有其他机器上，机器数越多，同步带来的网络带宽开销就越大。 每台 Web 服务器都要保存所有的 Session 数据，如果整个集群的 Session 数很多，每天机器用于保存 Session 数据的内存占用严重。 &emsp;&emsp;Session Replication 方案是靠应用容器开完成 Session 的复制，应用本身不用关心这个事情。但是，这个方案不适合集群机器数多的场景。 Session 数据集中存储&emsp;&emsp;把Session数据集中存储起来，然后不同 Web 服务器从同一个地方来获取 Session。&emsp;&emsp;存在的问题： 读写 Session 数据引入了网络操作，存在时延和不稳定性。 如果集中存储 Session 的机器或者集群有问题，就会影响应用。 Cookie Based&emsp;&emsp;把 Session 数据放在 Cookie 中，然后在 Web 服务器上从 Cookie 中生成对应的 Session 数据。好比每次都把自己的碗筷带在身上，这样去哪家饭店吃饭就介意随意选择。 Cookie 长度的限制。 安全性问题 每次 HTTP 请求和响应都带有 Session 数据，对性能有影响。 对于大型网站来说，Session Sticky 和 Session 集中存储是比较好的方案。]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Session</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[IntelliJ IDEA 使用技巧]]></title>
     <url>%2F2018%2F12%2F15%2FIntelliJ%20IDEA%2F</url>
     <content type="text"><![CDATA[常见的 IntelliJ IDEA使用技巧整理 编辑(Edit) Ctrl + X 删除一行 Ctrl + W 扩大选择范围 Ctrl + D 复制一行 Ctrl + Shift + 左右箭头 扩大光标选择范围 Ctrl + Shift + U 转换大小写 Ctrl + Shift + V 调出剪切板 Ctrl + R 在文件中查找并替换 Ctrl + Shift + R 查找并替换 Ctrl + Shift + F 查找 Ctrl + Alt + Shift + J 光标选中所有符合的视图(View) Ctrl + Shift + A Find Action Alt + 首字母 弹出对应选项 Alt + 1 跳转到 Project，之后 Ctrl+Shift+左右箭头 可移动分割线 F4 进入代码 Alt + 0 跳转到 Message Ctrl + Shift + F4 关闭 Alt + 4 跳转到 Run Alt + 6 跳转到 Todo Alt + F12 跳转到终端 Ctrl + Q 显示文档 Ctrl + P 显示方法参数 Ctrl + E 最近文件 Ctrl + Shift + E 最近修改文件导航 Alt + 上下箭头 方法之间跳转 Alt + 左右箭头 编辑区文件之间跳转 Ctrl + Alt + [ 或 ] 项目之间跳转 Ctrl + Shift + Backspace 跳转到上次编辑位置 Ctrl + Alt + 左右箭头 编辑位置跳转 Ctrl + G 跳转到行 Ctrl + N 查找类 Ctrl + Shift + N 查找文件 F2 跳转到下个错误 Shift + F2 上个错误代码(Code) Ctrl + O 查看重写的方法 Ctrl + I 查看实现的方法 Alt + Insert 生成构造方法、toString()等 Ctrl + Alt + T 生成代码块 Ctrl + J 插入 Live Template Alt + Shift + 上下箭头 将代码行上下移动 postfix Alt + Enter 不知道怎么写代码时重构(Refactor) Shift + F6 重命名 Extract运行(Run) Shift + F10/F9 运行/Debug 上次的程序 Alt + Shift + F10/F9 选择运行/Debug 程序 文件 Ctrl + C 光标指向文件时复制文件名 Ctrl + Shift + C 复制完整路径 Ctrl + F4 关闭当前编辑器窗口 Shift + Esc 隐藏当前面板Ctrl + F12 查看文件结构Ctrl + Alt + Shift + U 查看类图Ctrl + H 查看方法调用关系]]></content>
