@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qinyuan97.me/"/>
-  <updated>2019-01-04T15:23:27.296Z</updated>
+  <updated>2019-02-07T09:56:41.607Z</updated>
   <id>https://qinyuan97.me/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Spring Boot实战系列</title>
+    <link href="https://qinyuan97.me/2019/02/07/Spring%20Boot%E5%AE%9E%E6%88%98%E7%B3%BB%E5%88%97/"/>
+    <id>https://qinyuan97.me/2019/02/07/Spring Boot实战系列/</id>
+    <published>2019-02-07T09:43:22.647Z</published>
+    <updated>2019-02-07T09:56:41.607Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>转载自<a href="https://www.codesheep.cn/" target="_blank" rel="noopener">CodeSheep程序羊</a><br><a id="more"></a></p><h2 id="数据库-缓存相关"><a href="#数据库-缓存相关" class="headerlink" title="数据库/缓存相关"></a>数据库/缓存相关</h2><ul><li><a href="https://github.com/hansonwang99/Spring-Boot-In-Action/tree/master/springbt_guava_cache" target="_blank" rel="noopener">Guava Cache本地缓存在 Spring Boot应用中的实践</a></li><li><a href="https://github.com/hansonwang99/Spring-Boot-In-Action/tree/master/springbt_evcache" target="_blank" rel="noopener">EVCache缓存在 Spring Boot中的实战</a></li><li><a href="https://github.com/hansonwang99/Spring-Boot-In-Action/tree/master/springbt_ehcache" target="_blank" rel="noopener">Spring Boot应用缓存实践之：Ehcache加持</a></li><li><a href="https://github.com/hansonwang99/Spring-Boot-In-Action/tree/master/springbt_mybatis_sqlserver" target="_blank" rel="noopener">Spring Boot集成 MyBatis和 SQL Server实践</a></li><li><a href="https://github.com/hansonwang99/Spring-Boot-In-Action/tree/master/springboot_es_demo" target="_blank" rel="noopener">Elasticsearch搜索引擎在Spring Boot中的实践</a></li></ul><h2 id="日志相关"><a href="#日志相关" class="headerlink" title="日志相关"></a>日志相关</h2><ul><li><a href="https://www.codesheep.cn/2018/03/29/Boot%E6%97%A5%E5%BF%97%E6%A1%86%E6%9E%B6%E5%AE%9E%E8%B7%B5/" target="_blank" rel="noopener">Spring Boot日志框架实践</a></li></ul><h2 id="应用监控相关"><a href="#应用监控相关" class="headerlink" title="应用监控相关"></a>应用监控相关</h2><ul><li><a href="https://www.codesheep.cn/2019/01/17/springbt-btrace/" target="_blank" rel="noopener">利用神器 BTrace 追踪线上 Spring Boot应用运行时信息</a></li><li><a href="https://github.com/hansonwang99/Spring-Boot-In-Action/tree/master/springbt_admin_server" target="_blank" rel="noopener">Spring Boot应用监控实战</a></li><li><a href="https://github.com/hansonwang99/Spring-Boot-In-Action/tree/master/spring_boot_admin2.0_demo" target="_blank" rel="noopener">Spring Boot Admin 2.0开箱体验</a></li></ul><h2 id="内部机制相关"><a href="#内部机制相关" class="headerlink" title="内部机制相关"></a>内部机制相关</h2><ul><li><a href="https://www.codesheep.cn/2018/07/30/at-SpringBootApplication-zhujie/" target="_blank" rel="noopener">SpringBoot 中 @SpringBootApplication注解背后的三体结构探秘</a></li><li><a href="https://www.codesheep.cn/2018/09/04/springboot-startup-process/" target="_blank" rel="noopener">SpringBoot 应用程序启动过程探秘</a></li><li><a href="https://www.codesheep.cn/2019/01/24/springbt-starter/" target="_blank" rel="noopener">如何自制一个Spring Boot Starter并推送到远端公服</a></li></ul><h2 id="实战经验相关"><a href="#实战经验相关" class="headerlink" title="实战经验相关"></a>实战经验相关</h2><ul><li><a href="https://github.com/hansonwang99/Spring-Boot-In-Action/tree/master/springbt_uid_generator" target="_blank" rel="noopener">Spring Boot工程集成全局唯一ID生成器 UidGenerator</a></li><li><a href="https://github.com/hansonwang99/Spring-Boot-In-Action/tree/master/springbt_vesta" target="_blank" rel="noopener">Spring Boot 工程集成全局唯一ID生成器 Vesta</a></li><li><a href="https://www.codesheep.cn/2018/04/09/SpringBoot%E4%BC%98%E9%9B%85%E7%BC%96%E7%A0%81%E4%B9%8B%EF%BC%9ALombok%E5%8A%A0%E6%8C%81/" target="_blank" rel="noopener">Spring Boot优雅编码之：Lombok加持</a></li><li><a href="https://www.codesheep.cn/2018/04/12/SpringBoot%E5%BA%94%E7%94%A8Docker%E5%8C%96/" target="_blank" rel="noopener">Spring Boot应用 Docker化</a></li><li><a href="https://www.codesheep.cn/2018/06/23/SpringBoot%E7%83%AD%E9%83%A8%E7%BD%B2%E5%8A%A0%E6%8C%81/" target="_blank" rel="noopener">Spring Boot热部署加持</a></li><li><a href="https://github.com/hansonwang99/Spring-Boot-In-Action/tree/master/springbt_watermark" target="_blank" rel="noopener">基于Spring Boot实现图片上传/加水印一把梭操作</a></li><li><a href="https://www.codesheep.cn/2018/06/10/%E4%BB%8ESpringBoot%E5%88%B0SpringMVC/" target="_blank" rel="noopener">从Spring Boot到 SpringMVC</a></li><li><a href="https://www.codesheep.cn/2018/11/01/springbt-hanlp/" target="_blank" rel="noopener">自然语言处理工具包 HanLP在 Spring Boot中的应用</a></li><li><a href="https://www.codesheep.cn/2018/06/05/SpringBoot%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2%E4%BA%8E%E5%A4%96%E7%BD%AETomcat%E5%AE%B9%E5%99%A8/" target="_blank" rel="noopener">Spring Boot应用部署于外置Tomcat容器</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;转载自&lt;a href=&quot;https://www.codesheep.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CodeSheep程序羊&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Web" scheme="https://qinyuan97.me/categories/Web/"/>
+    
+    
+      <category term="Spring" scheme="https://qinyuan97.me/tags/Spring/"/>
+    
+      <category term="Spring Boot" scheme="https://qinyuan97.me/tags/Spring-Boot/"/>
+    
+  </entry>
   
   <entry>
     <title>git的使用</title>
