@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SkipList跳表]]></title>
+    <url>%2F2019%2F06%2F18%2F%E8%B7%B3%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[调表的基本原理 跳表的搜索链表示有序的，但是不能二分查找，所以将一些节点提取出来作为索引，形成多层的链表，减少比较次数。跳表的结构如下：]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>SkipList</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java中的注解]]></title>
     <url>%2F2019%2F06%2F17%2FJava%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[介绍 Java 中注解的原理和一些常用的注解 什么是注解注解是一种元数据，即描述数据的数据，应用于类、方法、参数、变量、构造器及包声明中的特殊修饰符。java.lang.annotation 提供四种元注解，专门注解其它的注解： @Documented 是否将注解信息添加在 java 文档中。 @Retention 定义该注解的生命周期 RetentionPolicy.SOURCE —— 在编译阶段丢弃。这些注解在编译结束之后就不再有任何意义，所以它们不会写入字节码。@Override, @SuppressWarnings都属于这类注解。RetentionPolicy.CLASS —— 在类加载的时候丢弃。在字节码文件的处理中有用。注解默认使用这种方式。RetentionPolicy.RUNTIME —— 始终不会丢弃，运行期也保留该注解，因此可以使用反射机制读取该注解的信息。自定义的注解通常使用这种方式。 @Target 表示该注解用于什么地方。如果不明确指出，该注解可以放在任何地方 ElementType.TYPE: 用于描述类、接口或enum声明ElementType.FIELD: 用于描述实例变量ElementType.METHODElementType.PARAMETERElementType.CONSTRUCTORElementType.LOCAL_VARIABLEElementType.ANNOTATION_TYPE 另一个注释ElementType.PACKAGE 用于记录java文件的package信息 @Inherited 是否允许子类继承该注解 自定义注解注解的内部只支持基本类型、String及枚举类型。注释中所有的属性被定义成方法，并允许提供默认值。123456789@Target(ElementType.METHOD)@Retention(RetentionPolicy.RUNTIME)public @interface Todo &#123; public enum Priority &#123;LOW, MEDIUM, HIGH&#125;; public enum Status &#123;STARTED, NOT_STARTED&#125;; String author() default "Yash"; Priority priority() default Priority.LOW; Status status() default Status.NOT_STARTED;&#125; 使用上面的注解：12345@Todo(priority = Todo.Priority.MEDIUM, author = "Yashwant", status = Todo.Status.STARTED)public void incompleteMethod1() &#123;//Some business logic is written//But it’s not complete yet&#125; 如果注解中只有一个属性，可以直接命名为“value”，使用时无需再标明属性名。1234567@interface Author&#123;String value();&#125;@Author("Yashwant")public void someMethod() &#123;&#125; 在用户程序中使用反射机制调用自定义注解：12345678910Class businessLogicClass = BusinessLogic.class;for(Method method : businessLogicClass.getMethods()) &#123; Todo todoAnnotation = (Todo)method.getAnnotation(Todo.class); if(todoAnnotation != null) &#123; System.out.println(" Method Name : " + method.getName()); System.out.println(" Author : " + todoAnnotation.author()); System.out.println(" Priority : " + todoAnnotation.priority()); System.out.println(" Status : " + todoAnnotation.status()); &#125;&#125; Spring 中常用注解 Controller注解一个类表示控制器，Spring MVC会自动扫描标注了这个注解的类。 RequestMapping请求路径映射，可以标注类，也可以是方法，可以指定请求类型，默认不指定为全部接收。 RequestParam放在参数前，用于将URL中的参数绑定到处理函数方法的变量中。 RequestBody放在参数前，表示参数从request body中获取，而不是从 url 获取。 ResponseBody放在方法上前，表示此方法返回的数据放在response body里面，而不是跳转页面。一般用于ajax请求，返回json数据。 PathVariable路径绑定变量，用于绑定restful路径上的变量。 RequestHeader放在方法参数前，用来获取request header中的参数值。 CookieValue放在方法参数前，用来获取request header cookie中的参数值。]]></content>
@@ -16,7 +28,7 @@
   <entry>
     <title><![CDATA[bitmap算法]]></title>
     <url>%2F2019%2F06%2F17%2Fbitmap%2F</url>
-    <content type="text"><![CDATA[在1亿个整数里面快速查找某个整数是否存在其中，使用 bitmap 算法：用一个比特位来表示一个数 假设原有的 bitmap 中存储了4和12这两个数字，则结构为： 存储一个数的过程：12345678910public void set(int number)&#123; //除以8，即所在的byte[]数组的索引 int index = number &gt;&gt; 3; // mod 8，即 byte[index] 的位置 int position = number % 0x07; //或运算，将 byte[index]的第 position 位置为1 byte[index] |= 1 &lt;&lt; position;&#125; 判断一个数是否存在：1234567public boolean contain(int number)&#123; int index = number &gt;&gt; 3; int position = number % 0x07; return (byte[index] &amp; (1 &lt;&lt; position)) != 0;&#125; 布隆过滤器假如一千万个数字，但是数字范围不是 1 到 10 亿，那位图的大小就是 10 亿个二进制位，也就是 120MB 的大小，消耗的内存空间加大了，而且在bitmap里面还会有部分空间浪费的情况存在。 假设我们对每一个数字都进行一次hash计算，然后通过hash将计算后的结果范围限制在1千万里面，那么就不需要再定义10亿个二进制位了。但是这样子还是会有相应的弊端，例如说hash冲突。那么这个时候如果我们采用多个hash函数来进行处理的话，理论上是可以大大降低冲突的概率的。于是就有了下边所说的布隆过滤器一说。 布隆过滤器通过使用多次的hash计算来进行数值是否存在的判断，虽然大大降低了hash冲突的情况，但是还是存在一定的缺陷，那就是会有误判的情况：某个不存在的数字可能会被判断为存在。 java里面提供了BitSet类，Redis也提供了相应的位图类，Google里面的guava工具包中的BloomFilter 也已经实现类布隆过滤器。]]></content>
+    <content type="text"><![CDATA[bitmap在1亿个整数里面快速查找某个整数是否存在其中，使用 bitmap 算法：用一个比特位来表示一个数 假设原有的 bitmap 中存储了4和12这两个数字，则结构为： 存储一个数的过程：12345678910public void set(int number)&#123; //除以8，即所在的byte[]数组的索引 int index = number &gt;&gt; 3; // mod 8，即 byte[index] 的位置 int position = number % 0x07; //或运算，将 byte[index]的第 position 位置为1 byte[index] |= 1 &lt;&lt; position;&#125; 判断一个数是否存在：1234567public boolean contain(int number)&#123; int index = number &gt;&gt; 3; int position = number % 0x07; return (byte[index] &amp; (1 &lt;&lt; position)) != 0;&#125; 布隆过滤器假如一千万个数字，但是数字范围不是 1 到 10 亿，那位图的大小就是 10 亿个二进制位，也就是 120MB 的大小，消耗的内存空间加大了，而且在bitmap里面还会有部分空间浪费的情况存在。 假设我们对每一个数字都进行一次hash计算，然后通过hash将计算后的结果范围限制在1千万里面，那么就不需要再定义10亿个二进制位了。但是这样子还是会有相应的弊端，例如说hash冲突。那么这个时候如果我们采用多个hash函数来进行处理的话，理论上是可以大大降低冲突的概率的。于是就有了下边所说的布隆过滤器一说。 布隆过滤器通过使用多次的hash计算来进行数值是否存在的判断，虽然大大降低了hash冲突的情况，但是还是存在一定的缺陷，那就是会有误判的情况：某个不存在的数字可能会被判断为存在。 java里面提供了BitSet类，Redis也提供了相应的位图类，Google里面的guava工具包中的BloomFilter 也已经实现类布隆过滤器。]]></content>
       <categories>
         <category>Algorithm</category>
       </categories>

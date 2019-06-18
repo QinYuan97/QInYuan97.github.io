@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qinyuan97.me/"/>
-  <updated>2019-06-17T07:06:07.123Z</updated>
+  <updated>2019-06-18T09:13:43.941Z</updated>
   <id>https://qinyuan97.me/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SkipList跳表</title>
+    <link href="https://qinyuan97.me/2019/06/18/%E8%B7%B3%E8%A1%A8/"/>
+    <id>https://qinyuan97.me/2019/06/18/跳表/</id>
+    <published>2019-06-18T09:01:21.100Z</published>
+    <updated>2019-06-18T09:13:43.941Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>调表的基本原理<br><a id="more"></a></p><h3 id="跳表的搜索"><a href="#跳表的搜索" class="headerlink" title="跳表的搜索"></a>跳表的搜索</h3><p>链表示有序的，但是不能二分查找，所以将一些节点提取出来作为索引，形成多层的链表，减少比较次数。跳表的结构如下：<br><img src="https://i.loli.net/2019/06/18/5d08ab1fc0e7476732.jpg" alt="跳表结构"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;调表的基本原理&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="https://qinyuan97.me/categories/Algorithm/"/>
+    
+    
+      <category term="Note" scheme="https://qinyuan97.me/tags/Note/"/>
+    
+      <category term="SkipList" scheme="https://qinyuan97.me/tags/SkipList/"/>
+    
+  </entry>
   
   <entry>
     <title>Java中的注解</title>
@@ -47,16 +71,13 @@
     <link href="https://qinyuan97.me/2019/06/17/bitmap/"/>
     <id>https://qinyuan97.me/2019/06/17/bitmap/</id>
     <published>2019-06-17T04:47:39.098Z</published>
-    <updated>2019-06-17T05:10:39.634Z</updated>
+    <updated>2019-06-18T09:15:41.280Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><a id="more"></a><p><strong>在1亿个整数里面快速查找某个整数是否存在其中，使用 bitmap 算法：用一个比特位来表示一个数</strong></p><p>假设原有的 bitmap 中存储了4和12这两个数字，则结构为：<br><img src="https://img-blog.csdnimg.cn/20190401152024919.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0Rhbm55X2lkZWE=,size_16,color_FFFFFF,t_70" alt="enter image description here"></p><p>存储一个数的过程：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> number)</span></span>&#123;</span><br><span class="line">    <span class="comment">//除以8，即所在的byte[]数组的索引</span></span><br><span class="line">    <span class="keyword">int</span> index = number &gt;&gt; <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// mod 8，即 byte[index] 的位置</span></span><br><span class="line">    <span class="keyword">int</span> position = number % <span class="number">0x07</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//或运算，将 byte[index]的第 position 位置为1</span></span><br><span class="line">    <span class="keyword">byte</span>[index] |= <span class="number">1</span> &lt;&lt; position;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>判断一个数是否存在：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contain</span><span class="params">(<span class="keyword">int</span> number)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> index = number &gt;&gt; <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> position = number % <span class="number">0x07</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">byte</span>[index] &amp; (<span class="number">1</span> &lt;&lt; position)) != <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h3><p><strong>假如一千万个数字，但是数字范围不是 1 到 10 亿，那位图的大小就是 10 亿个二进制位，也就是 120MB 的大小，消耗的内存空间加大了，而且在bitmap里面还会有部分空间浪费的情况存在。</strong></p><p>假设我们对每一个数字都进行一次hash计算，然后通过hash将计算后的结果范围限制在1千万里面，那么就不需要再定义10亿个二进制位了。但是这样子还是会有相应的弊端，例如说hash冲突。那么这个时候如果我们采用多个hash函数来进行处理的话，理论上是可以大大降低冲突的概率的。于是就有了下边所说的<strong>布隆过滤器</strong>一说。</p><p><img src="https://img-blog.csdnimg.cn/20190401154143631.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0Rhbm55X2lkZWE=,size_16,color_FFFFFF,t_70" alt="enter image description here"></p><p>布隆过滤器通过使用多次的hash计算来进行数值是否存在的判断，虽然大大降低了hash冲突的情况，但是还是存在一定的缺陷，那就是会有误判的情况：某个不存在的数字可能会被判断为存在。</p><p>java里面提供了BitSet类，Redis也提供了相应的位图类，Google里面的guava工具包中的BloomFilter 也已经实现类布隆过滤器。</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>bitmap<br><a id="more"></a><br><strong>在1亿个整数里面快速查找某个整数是否存在其中，使用 bitmap 算法：用一个比特位来表示一个数</strong></p><p>假设原有的 bitmap 中存储了4和12这两个数字，则结构为：<br><img src="https://i.loli.net/2019/06/18/5d08aba17dabc45718.png" alt="20190401152024919"></p><p>存储一个数的过程：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> number)</span></span>&#123;</span><br><span class="line">    <span class="comment">//除以8，即所在的byte[]数组的索引</span></span><br><span class="line">    <span class="keyword">int</span> index = number &gt;&gt; <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// mod 8，即 byte[index] 的位置</span></span><br><span class="line">    <span class="keyword">int</span> position = number % <span class="number">0x07</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//或运算，将 byte[index]的第 position 位置为1</span></span><br><span class="line">    <span class="keyword">byte</span>[index] |= <span class="number">1</span> &lt;&lt; position;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>判断一个数是否存在：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contain</span><span class="params">(<span class="keyword">int</span> number)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> index = number &gt;&gt; <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> position = number % <span class="number">0x07</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">byte</span>[index] &amp; (<span class="number">1</span> &lt;&lt; position)) != <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h3><p><strong>假如一千万个数字，但是数字范围不是 1 到 10 亿，那位图的大小就是 10 亿个二进制位，也就是 120MB 的大小，消耗的内存空间加大了，而且在bitmap里面还会有部分空间浪费的情况存在。</strong></p><p>假设我们对每一个数字都进行一次hash计算，然后通过hash将计算后的结果范围限制在1千万里面，那么就不需要再定义10亿个二进制位了。但是这样子还是会有相应的弊端，例如说hash冲突。那么这个时候如果我们采用多个hash函数来进行处理的话，理论上是可以大大降低冲突的概率的。于是就有了下边所说的<strong>布隆过滤器</strong>一说。</p><p><img src="https://i.loli.net/2019/06/18/5d08abbddccec46874.png" alt="20190401154143631"></p><p>布隆过滤器通过使用多次的hash计算来进行数值是否存在的判断，虽然大大降低了hash冲突的情况，但是还是存在一定的缺陷，那就是会有误判的情况：某个不存在的数字可能会被判断为存在。</p><p>java里面提供了BitSet类，Redis也提供了相应的位图类，Google里面的guava工具包中的BloomFilter 也已经实现类布隆过滤器。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
-      
+      &lt;p&gt;bitmap&lt;br&gt;
     
     </summary>
     
