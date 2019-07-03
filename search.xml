@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[设计模式]]></title>
+    <url>%2F2019%2F07%2F03%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;Head First设计模式笔记 策略模式模式定义定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。 问题描述设计不同种类的鸭子拥有不同的叫声和飞行方式。 简单实现方案使用继承的解决方案如下，这种方案代码无法复用，如果两个鸭子类拥有同样的飞行方式，就有两份重复的代码。 设计原则封装变化：在这里变化的是鸭子叫和飞行的行为方式。针对接口编程，而不是针对实现编程：变量声明的类型为父类，而不是具体的某个子类。父类中的方法实现不在父类，而是在各个子类。程序在运行时可以动态改变变量所指向的子类类型。 运用这一原则，将叫和飞行的行为抽象出来，实现多种不同的叫和飞行的子类，让子类去实现具体的叫和飞行方式。 多用组合，少用继承：组合也就是 HAS-A 关系，通过组合，可以在运行时动态改变实现，只要通过改变父类对象具体指向哪个子类即可。而继承就不能做到这些，继承体系在创建类时就已经确定。 运用这一原则，在 Duck 类中组合 FlyBehavior 和 QuackBehavior 类，performQuack() 和 performFly() 方法委托给这两个类去处理。通过这种方式，一个 Duck 子类可以根据需要去初始化 FlyBehavior 和 QuackBehavior 的子类对象，并且也可以动态地进行改变。 问题的解决方案类图]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>design pattern</tag>
+        <tag>Note![d887219c-963a-4392-abe7-d3967546e96d](https://i.loli.net/2019/07/03/5d1c9b10dc71b95020.jpg)![d887219c-963a-4392-abe7-d3967546e96d](https://i.loli.net/2019/07/03/5d1c9b1e9500979995.jpg)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SkipList跳表]]></title>
     <url>%2F2019%2F06%2F18%2F%E8%B7%B3%E8%A1%A8%2F</url>
-    <content type="text"><![CDATA[调表的基本原理 跳表的搜索链表示有序的，但是不能二分查找，所以将一些节点提取出来作为索引，形成多层的链表，减少比较次数。跳表的结构如下：]]></content>
+    <content type="text"><![CDATA[调表的基本原理 跳表的搜索链表示有序的，但是不能二分查找，所以将一些节点提取出来作为索引，形成多层的链表，减少比较次数。跳表的结构如下： 跳表具有如下性质： 多层链表 每一层都是一个有序链表 最底层的链表包含所有元素 如果一个元素出现在 Level i 的链表中，则它在 Level i 之下的链表也都会出现。 每个节点包含两个指针，一个指向同一链表中的下一个元素，一个指向下面一层的元素。 查找元素117的过程：具体的搜索算法：123456789101112find(x)&#123; p = top; while(1)&#123; while(p.next.key &lt; x)&#123; p = p.next; &#125; if(p.down == NULL)&#123; return p.next; &#125; p = p.down; &#125;&#125; 跳表的插入先确定该元素要占据的层数K (随机或使用特定算法)然后在 Level1 1… Level K 各个层的链表都插入元素]]></content>
       <categories>
         <category>Algorithm</category>
       </categories>

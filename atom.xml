@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qinyuan97.me/"/>
-  <updated>2019-06-18T09:13:43.941Z</updated>
+  <updated>2019-07-03T12:10:56.813Z</updated>
   <id>https://qinyuan97.me/</id>
   
   <author>
@@ -17,13 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>设计模式</title>
+    <link href="https://qinyuan97.me/2019/07/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://qinyuan97.me/2019/07/03/设计模式/</id>
+    <published>2019-07-03T11:56:58.477Z</published>
+    <updated>2019-07-03T12:10:56.813Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>&emsp;&emsp;Head First设计模式笔记<br><a id="more"></a></p><h2 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h2><h3 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h3><p>定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。</p><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>设计不同种类的鸭子拥有不同的叫声和飞行方式。</p><h3 id="简单实现方案"><a href="#简单实现方案" class="headerlink" title="简单实现方案"></a>简单实现方案</h3><p>使用继承的解决方案如下，这种方案代码无法复用，如果两个鸭子类拥有同样的飞行方式，就有两份重复的代码。<br><img src="https://i.loli.net/2019/07/03/5d1c99b1ba14236799.jpg" alt="ebc59de6-fa62-4118-92e5-7744b8ae893d"></p><h3 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h3><p><strong>封装变化</strong>：在这里变化的是鸭子叫和飞行的行为方式。<br><strong>针对接口编程，而不是针对实现编程</strong>：变量声明的类型为父类，而不是具体的某个子类。父类中的方法实现不在父类，而是在各个子类。程序在运行时可以动态改变变量所指向的子类类型。</p><p>运用这一原则，将叫和飞行的行为抽象出来，实现多种不同的叫和飞行的子类，让子类去实现具体的叫和飞行方式。<br><img src="https://i.loli.net/2019/07/03/5d1c9a5f00cf135324.png" alt="1c8ccf5c-7ecd-4b8a-b160-3f72a510ce26"></p><p><strong>多用组合，少用继承</strong>：组合也就是 HAS-A 关系，通过组合，可以在运行时动态改变实现，只要通过改变父类对象具体指向哪个子类即可。而继承就不能做到这些，继承体系在创建类时就已经确定。</p><p>运用这一原则，在 Duck 类中组合 FlyBehavior 和 QuackBehavior 类，performQuack() 和 performFly() 方法委托给这两个类去处理。通过这种方式，一个 Duck 子类可以根据需要去初始化 FlyBehavior 和 QuackBehavior 的子类对象，并且也可以动态地进行改变。<br><img src="https://i.loli.net/2019/07/03/5d1c9add0011a94536.jpg" alt="29574e6f-295c-444e-83c7-b162e8a73a83"></p><h3 id="问题的解决方案类图"><a href="#问题的解决方案类图" class="headerlink" title="问题的解决方案类图"></a>问题的解决方案类图</h3><p><img src="https://i.loli.net/2019/07/03/5d1c9b34d931c50060.jpg" alt="d887219c-963a-4392-abe7-d3967546e96d"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;Head First设计模式笔记&lt;br&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="https://qinyuan97.me/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="design pattern" scheme="https://qinyuan97.me/tags/design-pattern/"/>
+    
+      <category term="Note![d887219c-963a-4392-abe7-d3967546e96d](https://i.loli.net/2019/07/03/5d1c9b10dc71b95020.jpg)![d887219c-963a-4392-abe7-d3967546e96d](https://i.loli.net/2019/07/03/5d1c9b1e9500979995.jpg)" scheme="https://qinyuan97.me/tags/Note-d887219c-963a-4392-abe7-d3967546e96d-https-i-loli-net-2019-07-03-5d1c9b10dc71b95020-jpg-d887219c-963a-4392-abe7-d3967546e96d-https-i-loli-net-2019-07-03-5d1c9b1e9500979995-jpg/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SkipList跳表</title>
     <link href="https://qinyuan97.me/2019/06/18/%E8%B7%B3%E8%A1%A8/"/>
     <id>https://qinyuan97.me/2019/06/18/跳表/</id>
     <published>2019-06-18T09:01:21.100Z</published>
-    <updated>2019-06-18T09:13:43.941Z</updated>
+    <updated>2019-06-18T10:07:18.094Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>调表的基本原理<br><a id="more"></a></p><h3 id="跳表的搜索"><a href="#跳表的搜索" class="headerlink" title="跳表的搜索"></a>跳表的搜索</h3><p>链表示有序的，但是不能二分查找，所以将一些节点提取出来作为索引，形成多层的链表，减少比较次数。跳表的结构如下：<br><img src="https://i.loli.net/2019/06/18/5d08ab1fc0e7476732.jpg" alt="跳表结构"></p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>调表的基本原理<br><a id="more"></a></p><h3 id="跳表的搜索"><a href="#跳表的搜索" class="headerlink" title="跳表的搜索"></a>跳表的搜索</h3><p>链表示有序的，但是不能二分查找，所以将一些节点提取出来作为索引，形成多层的链表，减少比较次数。跳表的结构如下：<br><img src="https://i.loli.net/2019/06/18/5d08ab1fc0e7476732.jpg" alt="跳表结构"></p><p>跳表具有如下性质：</p><ul><li>多层链表</li><li>每一层都是一个有序链表</li><li>最底层的链表包含所有元素</li><li>如果一个元素出现在 Level i 的链表中，则它在 Level i 之下的链表也都会出现。</li><li>每个节点包含两个指针，一个指向同一链表中的下一个元素，一个指向下面一层的元素。</li></ul><p>查找元素117的过程：<br><img src="https://i.loli.net/2019/06/18/5d08ad355039637411.jpg" alt="72995dcc4cc61f6bff808&amp;amp"><br>具体的搜索算法：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">find(x)&#123;</span><br><span class="line">    p = top;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">while</span>(p.next.key &lt; x)&#123;</span><br><span class="line">            p = p.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p.down == <span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> p.next;</span><br><span class="line">        &#125;</span><br><span class="line">        p = p.down;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="跳表的插入"><a href="#跳表的插入" class="headerlink" title="跳表的插入"></a>跳表的插入</h3><p>先确定该元素要占据的层数K (随机或使用特定算法)<br>然后在 Level1 1… Level K 各个层的链表都插入元素</p>]]></content>
     
     <summary type="html">
     
